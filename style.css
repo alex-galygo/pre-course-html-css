@@ -11,11 +11,14 @@ ul {
 body {
     font-style: normal;
     line-height: normal;
-    font-family: Lato, sans-serif;
+    font-family: Rubik, sans-serif;
 }
 
 .section {
     background-color: #EFF2F9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card {
@@ -24,20 +27,43 @@ body {
     background-color: #FFF;
     box-shadow: 20px 20px 40px 0 rgba(81, 91, 117, 0.25);
     padding: 60px 0 70px;
+    display: flex;
+}
+
+.preview-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
 }
 
 .product-image-block {
     border-right: 2px solid #14141426;
-    width: 540px;
+    min-width: 540px;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
 }
 
 .preview {
     width: 80px;
     height: 80px;
     background: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    cursor: pointer;
+
 }
 
-.preview.selected {
+.preview.selected,
+.preview:hover {
     box-shadow: 8px 8px 16px 0 rgba(81, 91, 117, 0.25);
 }
 
@@ -58,7 +84,6 @@ body {
     font-family: Lato, sans-serif;
     font-size: 16px;
     font-weight: 400;
-    margin-bottom: 60px;
 }
 
 .text {
@@ -67,12 +92,19 @@ body {
     font-size: 18px;
     font-weight: 400;
     line-height: 30px;
-    margin-bottom: 65px;
+    margin: 60px 0 65px;
 }
 
 .colors {
     margin-bottom: 65px;
 }
+
+.colors-list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
 .title {
     color: rgba(20, 20, 20, 0.40);
     font-family: Lato, sans-serif;
@@ -109,13 +141,27 @@ body {
     background-color: #F2C723;
 }
 
-li.selected {
+li {
     width: 30px;
     height: 30px;
     padding: 7px;
     background-color: #FFFFFF;
-    box-shadow: 8px 8px 16px 0 rgba(81, 91, 117, 0.25);
     border-radius: 50%;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+li.selected,
+li:hover {
+    box-shadow: 8px 8px 16px 0 rgba(81, 91, 117, 0.25);
+}
+
+.cta-wrapper {
+    display: flex;
+}
+
+.cta-wrapper > div {
+    flex-grow: 1;
 }
 
 .quantity {
@@ -129,6 +175,7 @@ li.selected {
     background-image: url("./assets/images/batton.svg");
     background-repeat: no-repeat;
     background-position: right top 50%;
+    cursor: pointer;
 }
 
 .price {
@@ -143,10 +190,14 @@ li.selected {
     width: 100%;
     height: 70px;
     background-color: #141414;
-
     color: #FFF;
-    font-family: Rubik sans-serif;
     font-size: 18px;
-    font-weight: 500;
     margin-top: 75px;
+    transition: 0.2s;
+    cursor: pointer;
 }
+
+.btn:hover {
+    transform: translateY(10px);
+}
+
